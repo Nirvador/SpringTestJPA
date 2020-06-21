@@ -56,6 +56,22 @@ public class EmployeeRepositoryTest {
         assertThat(employeeList).hasSize(2);
     }
 
+    @Test
+    @Rollback(false)
+    public void employeeRepository_shouldUpdateAnEmployee() {
+        // Given
+        Employee tonyStark = employeeRepository.findByName("Stark");
+        tonyStark.setAge(40);
+
+        // When
+        employeeRepository.save(tonyStark);
+        Employee tonyStarkUpdated = employeeRepository.findByName("Stark");
+
+        // Then
+        assertThat(tonyStarkUpdated.getAge()).isEqualTo(40);
+
+    }
+
 
 
 
