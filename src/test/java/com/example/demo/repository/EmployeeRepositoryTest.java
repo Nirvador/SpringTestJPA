@@ -8,6 +8,8 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.TestPropertySource;
 
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DataJpaTest
@@ -39,6 +41,19 @@ public class EmployeeRepositoryTest {
 
         // Then
         assertThat(tonyStark.getName()).isEqualTo("Stark");
+    }
+
+    @Test
+    public void employeeRepository_shouldListAllEmployees() {
+        // Given
+        Employee bruceBanner = new Employee("Banner", 35);
+
+        // When
+        employeeRepository.save(bruceBanner);
+        List<Employee> employeeList = (List<Employee>) employeeRepository.findAll();
+
+        // Then
+        assertThat(employeeList).hasSize(2);
     }
 
 
