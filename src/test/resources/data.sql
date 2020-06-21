@@ -8,4 +8,4 @@ CREATE TABLE IF NOT EXISTS `employees`
     CONSTRAINT employees_pk PRIMARY KEY (id)
 );
 
-INSERT INTO `employees` VALUES (1,'Tony Stark',35);
+INSERT INTO `employees` VALUES (1,'Stark',35);
