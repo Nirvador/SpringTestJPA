@@ -1,6 +1,7 @@
 package com.example.demo.repository;
 
 import com.example.demo.bo.Employee;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -27,6 +28,7 @@ public class EmployeeRepositoryTest {
     @Test
     @Order(1)
     @Rollback(false)
+    @DisplayName("Employee Repository can create an employee")
     public void employeeRepository_shouldCreateAnEmployee() {
         // Given
         Employee bruceBanner = new Employee("Banner", 35);
@@ -41,6 +43,7 @@ public class EmployeeRepositoryTest {
 
     @Test
     @Order(2)
+    @DisplayName("Employee Repository can find an employee")
     public void employeeRepository_shouldFindAnEmployee() {
         // Given
         Employee tonyStark = employeeRepository.findByName("Stark");
@@ -51,6 +54,7 @@ public class EmployeeRepositoryTest {
 
     @Test
     @Order(3)
+    @DisplayName("Employee Repository can retrieve every employees")
     public void employeeRepository_shouldListAllEmployees() {
         // Given
 
@@ -64,6 +68,7 @@ public class EmployeeRepositoryTest {
     @Test
     @Order(4)
     @Rollback(false)
+    @DisplayName("Employee Repository can update an employee")
     public void employeeRepository_shouldUpdateAnEmployee() {
         // Given
         Employee tonyStark = employeeRepository.findByName("Stark");
@@ -81,6 +86,7 @@ public class EmployeeRepositoryTest {
     @Test
     @Order(5)
     @Rollback(false)
+    @DisplayName("Employee Repository can delete an employee")
     public void employeeRepository_shouldDeleteAnEmployee() {
         // Given
         Employee tonyStark = employeeRepository.findByName("Stark");
