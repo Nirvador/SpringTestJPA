@@ -31,7 +31,7 @@ public class EmployeeRepositoryTest {
     @DisplayName("Employee Repository can create an employee")
     public void employeeRepository_shouldCreateAnEmployee() {
         // Given
-        Employee bruceBanner = new Employee("Banner", 35);
+        Employee bruceBanner = new Employee(4,"Loki", 35);
 
         // When
         Employee employeeSaved = employeeRepository.save(bruceBanner);
@@ -59,10 +59,10 @@ public class EmployeeRepositoryTest {
         // Given
 
         // When
-        List<Employee> employeeList = (List<Employee>) employeeRepository.findAll();
+        List<Employee> employeeList = employeeRepository.findAll();
 
         // Then
-        assertThat(employeeList).hasSize(2);
+        assertThat(employeeList).hasSize(3);
     }
 
     @Test

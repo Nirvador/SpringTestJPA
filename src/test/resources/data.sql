@@ -9,3 +9,4 @@ CREATE TABLE IF NOT EXISTS `employees`
 );
 
 INSERT INTO `employees` VALUES (1,'Stark',35);
+INSERT INTO `employees` VALUES (2,'Banner',33);

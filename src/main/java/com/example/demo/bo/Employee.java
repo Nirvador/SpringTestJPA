@@ -29,6 +29,12 @@ public class Employee {
         this.age = age;
     }
 
+    public Employee(Integer id, String name, Integer age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+    }
+
     public Integer getId() {
         return id;
     }
